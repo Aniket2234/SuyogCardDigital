@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { QRCodeSVG } from "qrcode.react";
-import { Share2, Download, MessageCircle, Linkedin, Mail, Copy, Check } from "lucide-react";
+import { Share2, Download, MessageCircle, Linkedin, Mail, Copy, Check, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface ShareSectionProps {
@@ -71,78 +72,85 @@ END:VCARD`;
   };
 
   return (
-    <div className="px-6 py-12 bg-muted/30">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground" data-testid="text-share-heading">
-          Share This Card
-        </h2>
+    <div className="px-6 py-12 bg-gradient-to-b from-background to-muted/20">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+          <Badge variant="outline" className="mb-3 border-primary/30 text-primary px-4 py-1">
+            <Share2 className="w-3 h-3 mr-1" />
+            Share & Connect
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-2" data-testid="text-share-heading">
+            Share This Card
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-6">
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Quick Actions</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="p-6 border-2 border-primary/20 shadow-xl">
+            <div className="flex items-center gap-2 mb-5">
+              <Sparkles className="w-5 h-5 text-primary" />
+              <h3 className="text-lg font-bold text-foreground">Quick Actions</h3>
+            </div>
             <div className="space-y-3">
               <Button
                 onClick={handleCopyLink}
                 variant="outline"
-                className="w-full justify-start"
+                className="w-full justify-start border-2 hover:border-primary/50 h-12"
                 data-testid="button-copy-link"
               >
-                {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
-                {copied ? "Link Copied!" : "Copy Link"}
+                {copied ? <Check className="w-5 h-5 mr-3 text-green-500" /> : <Copy className="w-5 h-5 mr-3" />}
+                <span className="font-semibold">{copied ? "Link Copied!" : "Copy Link"}</span>
               </Button>
               
               <Button
                 onClick={handleDownloadVCard}
                 variant="outline"
-                className="w-full justify-start"
+                className="w-full justify-start border-2 hover:border-primary/50 h-12"
                 data-testid="button-download-vcard"
               >
-                <Download className="w-4 h-4 mr-2" />
-                Download Contact
+                <Download className="w-5 h-5 mr-3" />
+                <span className="font-semibold">Download Contact</span>
               </Button>
 
-              <div className="pt-2">
-                <p className="text-sm font-medium text-muted-foreground mb-3">Share via</p>
-                <div className="flex gap-2">
+              <div className="pt-3 border-t-2 border-dashed border-border">
+                <p className="text-sm font-bold text-foreground mb-4">Share via Social Media</p>
+                <div className="flex gap-3">
                   <Button
                     onClick={handleWhatsAppShare}
                     size="icon"
-                    variant="outline"
-                    className="rounded-full"
+                    className="rounded-xl h-12 w-12 bg-green-500 hover:bg-green-600 border-2 border-green-600"
                     data-testid="button-share-whatsapp"
                   >
-                    <MessageCircle className="w-5 h-5" />
+                    <MessageCircle className="w-6 h-6" />
                   </Button>
                   <Button
                     onClick={handleLinkedInShare}
                     size="icon"
-                    variant="outline"
-                    className="rounded-full"
+                    className="rounded-xl h-12 w-12 bg-blue-600 hover:bg-blue-700 border-2 border-blue-700"
                     data-testid="button-share-linkedin"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <Linkedin className="w-6 h-6" />
                   </Button>
                   <Button
                     onClick={handleEmailShare}
                     size="icon"
-                    variant="outline"
-                    className="rounded-full"
+                    className="rounded-xl h-12 w-12"
                     data-testid="button-share-email"
                   >
-                    <Mail className="w-5 h-5" />
+                    <Mail className="w-6 h-6" />
                   </Button>
                 </div>
               </div>
             </div>
           </Card>
 
-          <Card className="p-6 flex flex-col items-center justify-center">
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Scan QR Code</h3>
-            <div className="bg-white p-4 rounded-md">
-              <QRCodeSVG value={cardUrl} size={200} data-testid="qr-code" />
+          <Card className="p-6 border-2 border-chart-2/20 shadow-xl bg-gradient-to-br from-card to-primary/5">
+            <h3 className="text-lg font-bold mb-4 text-foreground text-center">Scan QR Code</h3>
+            <div className="bg-white p-5 rounded-xl shadow-lg border-4 border-primary/20 mx-auto w-fit">
+              <QRCodeSVG value={cardUrl} size={200} data-testid="qr-code" level="H" />
             </div>
-            <p className="text-sm text-muted-foreground mt-4 text-center">
-              Scan to open this card on mobile
+            <p className="text-sm text-muted-foreground mt-5 text-center font-medium">
+              📱 Scan to open this card instantly on your mobile device
             </p>
           </Card>
         </div>
