@@ -67,41 +67,51 @@ export default function ServicesSection() {
   };
 
   return (
-    <div className="px-6 py-12 max-w-7xl mx-auto">
-      <div className="text-center mb-10">
-        <Badge variant="outline" className="mb-3 border-primary/30 text-primary px-4 py-1">
-          What We Offer
-        </Badge>
-        <h2 className="text-3xl md:text-4xl font-black text-foreground mb-2" data-testid="text-services-heading">
+    <div className="px-4 sm:px-6 py-10 sm:py-12 max-w-7xl mx-auto">
+      <div className="text-center mb-8 sm:mb-10">
+        <div className="relative inline-block mb-3">
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-chart-2 rounded-full blur opacity-30"></div>
+          <Badge variant="outline" className="relative border-2 border-primary/50 text-primary px-5 py-1.5 font-bold bg-gradient-to-r from-primary/5 to-chart-2/5">
+            What We Offer
+          </Badge>
+        </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-destructive to-chart-2 bg-clip-text text-transparent mb-3" data-testid="text-services-heading">
           Our Services
         </h2>
-        <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
+        <div className="flex items-center justify-center gap-2">
+          <div className="h-1 w-12 bg-gradient-to-r from-transparent via-primary to-primary rounded-full" />
+          <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-full" />
+          <div className="h-1 w-12 bg-gradient-to-r from-chart-2 via-chart-2 to-transparent rounded-full" />
+        </div>
       </div>
 
-      <div className="space-y-5">
-        <Card className="overflow-hidden border-2 border-primary/20 shadow-lg">
-          <button
-            onClick={() => toggleCategory("business-registration")}
-            className="w-full px-6 py-5 text-left hover-elevate active-elevate-2 transition-all group"
-            data-testid="button-category-business-registration"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
-                  <Building2 className="w-5 h-5 text-primary" />
+      <div className="space-y-4 sm:space-y-5">
+        <div className="relative">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-chart-2 to-primary rounded-2xl blur opacity-20"></div>
+          <Card className="relative overflow-hidden border-2 border-transparent shadow-lg bg-gradient-to-br from-card to-primary/5">
+            <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-primary via-chart-2 to-primary -z-10"></div>
+            <button
+              onClick={() => toggleCategory("business-registration")}
+              className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left hover-elevate active-elevate-2 transition-all group"
+              data-testid="button-category-business-registration"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-primary to-chart-2 border-2 border-white/20 flex items-center justify-center shadow-lg">
+                    <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg md:text-xl font-black text-foreground">
+                      Business Registration
+                    </h3>
+                    <p className="text-xs text-muted-foreground font-medium">8 specialized services</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold text-foreground">
-                    Business Registration Services
-                  </h3>
-                  <p className="text-xs text-muted-foreground">8 specialized services</p>
-                </div>
+                <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 flex-shrink-0 ${expandedCategory === "business-registration" ? "rotate-180" : ""}`} />
               </div>
-              <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${expandedCategory === "business-registration" ? "rotate-180" : ""}`} />
-            </div>
-          </button>
-          {expandedCategory === "business-registration" && (
-            <div className="px-6 pb-6 pt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 animate-in slide-in-from-top-2 duration-300">
+            </button>
+            {expandedCategory === "business-registration" && (
+              <div className="px-3 sm:px-6 pb-5 sm:pb-6 pt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 animate-in slide-in-from-top-2 duration-300">
               {businessRegistrationServices.map((service, index) => (
                 <ServiceCard
                   key={index}
@@ -113,31 +123,35 @@ export default function ServicesSection() {
               ))}
             </div>
           )}
-        </Card>
+          </Card>
+        </div>
 
-        <Card className="overflow-hidden border-2 border-chart-2/20 shadow-lg">
-          <button
-            onClick={() => toggleCategory("business-support")}
-            className="w-full px-6 py-5 text-left hover-elevate active-elevate-2 transition-all group"
-            data-testid="button-category-business-support"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-chart-2/10 border border-chart-2/30 flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5 text-chart-2" />
+        <div className="relative">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-chart-2 via-destructive to-chart-2 rounded-2xl blur opacity-20"></div>
+          <Card className="relative overflow-hidden border-2 border-transparent shadow-lg bg-gradient-to-br from-card to-chart-2/5">
+            <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-chart-2 via-destructive to-chart-2 -z-10"></div>
+            <button
+              onClick={() => toggleCategory("business-support")}
+              className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left hover-elevate active-elevate-2 transition-all group"
+              data-testid="button-category-business-support"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-chart-2 to-destructive border-2 border-white/20 flex items-center justify-center shadow-lg">
+                    <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg md:text-xl font-black text-foreground">
+                      Business Support
+                    </h3>
+                    <p className="text-xs text-muted-foreground font-medium">16 comprehensive services</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold text-foreground">
-                    Business Support Services
-                  </h3>
-                  <p className="text-xs text-muted-foreground">16 comprehensive services</p>
-                </div>
+                <ChevronDown className={`w-5 h-5 text-chart-2 transition-transform duration-300 flex-shrink-0 ${expandedCategory === "business-support" ? "rotate-180" : ""}`} />
               </div>
-              <ChevronDown className={`w-5 h-5 text-chart-2 transition-transform duration-300 ${expandedCategory === "business-support" ? "rotate-180" : ""}`} />
-            </div>
-          </button>
-          {expandedCategory === "business-support" && (
-            <div className="px-6 pb-6 pt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 animate-in slide-in-from-top-2 duration-300">
+            </button>
+            {expandedCategory === "business-support" && (
+              <div className="px-3 sm:px-6 pb-5 sm:pb-6 pt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 animate-in slide-in-from-top-2 duration-300">
               {businessSupportServices.map((service, index) => (
                 <ServiceCard
                   key={index}
@@ -147,9 +161,10 @@ export default function ServicesSection() {
                   onClick={() => console.log(`Clicked: ${service.title}`)}
                 />
               ))}
-            </div>
-          )}
-        </Card>
+              </div>
+            )}
+          </Card>
+        </div>
       </div>
     </div>
   );

@@ -72,87 +72,107 @@ END:VCARD`;
   };
 
   return (
-    <div className="px-6 py-12 bg-gradient-to-b from-background to-muted/20">
+    <div className="px-4 sm:px-6 py-10 sm:py-12 bg-gradient-to-b from-background via-primary/5 to-chart-2/10">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10">
-          <Badge variant="outline" className="mb-3 border-primary/30 text-primary px-4 py-1">
-            <Share2 className="w-3 h-3 mr-1" />
-            Share & Connect
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-2" data-testid="text-share-heading">
+        <div className="text-center mb-8 sm:mb-10">
+          <div className="relative inline-block mb-3">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-chart-2 rounded-full blur opacity-30"></div>
+            <Badge variant="outline" className="relative border-2 border-primary/50 px-5 py-1.5 font-bold bg-gradient-to-r from-primary/5 to-chart-2/5">
+              <Share2 className="w-3 h-3 mr-1.5 text-primary" />
+              <span className="text-primary">Share & Connect</span>
+            </Badge>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-destructive to-chart-2 bg-clip-text text-transparent mb-3" data-testid="text-share-heading">
             Share This Card
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
+          <div className="flex items-center justify-center gap-2">
+            <div className="h-1 w-12 bg-gradient-to-r from-transparent via-primary to-primary rounded-full" />
+            <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-full" />
+            <div className="h-1 w-12 bg-gradient-to-r from-chart-2 via-chart-2 to-transparent rounded-full" />
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="p-6 border-2 border-primary/20 shadow-xl">
-            <div className="flex items-center gap-2 mb-5">
-              <Sparkles className="w-5 h-5 text-primary" />
-              <h3 className="text-lg font-bold text-foreground">Quick Actions</h3>
-            </div>
-            <div className="space-y-3">
-              <Button
-                onClick={handleCopyLink}
-                variant="outline"
-                className="w-full justify-start border-2 hover:border-primary/50 h-12"
-                data-testid="button-copy-link"
-              >
-                {copied ? <Check className="w-5 h-5 mr-3 text-green-500" /> : <Copy className="w-5 h-5 mr-3" />}
-                <span className="font-semibold">{copied ? "Link Copied!" : "Copy Link"}</span>
-              </Button>
-              
-              <Button
-                onClick={handleDownloadVCard}
-                variant="outline"
-                className="w-full justify-start border-2 hover:border-primary/50 h-12"
-                data-testid="button-download-vcard"
-              >
-                <Download className="w-5 h-5 mr-3" />
-                <span className="font-semibold">Download Contact</span>
-              </Button>
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="relative">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-chart-2 to-primary rounded-2xl blur opacity-20"></div>
+            <Card className="relative p-5 sm:p-6 border-2 border-transparent shadow-xl bg-gradient-to-br from-card to-primary/5">
+              <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-primary via-chart-2 to-primary -z-10"></div>
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-white" />
+                </div>
+                <h3 className="text-base sm:text-lg font-black text-foreground">Quick Actions</h3>
+              </div>
+              <div className="space-y-3">
+                <Button
+                  onClick={handleCopyLink}
+                  variant="outline"
+                  className="w-full justify-start border-2 hover:border-primary h-11 sm:h-12 bg-gradient-to-r from-primary/5 to-transparent"
+                  data-testid="button-copy-link"
+                >
+                  {copied ? <Check className="w-5 h-5 mr-3 text-green-500" /> : <Copy className="w-5 h-5 mr-3 text-primary" />}
+                  <span className="font-bold text-sm sm:text-base">{copied ? "Link Copied!" : "Copy Link"}</span>
+                </Button>
+                
+                <Button
+                  onClick={handleDownloadVCard}
+                  variant="outline"
+                  className="w-full justify-start border-2 hover:border-chart-2 h-11 sm:h-12 bg-gradient-to-r from-chart-2/5 to-transparent"
+                  data-testid="button-download-vcard"
+                >
+                  <Download className="w-5 h-5 mr-3 text-chart-2" />
+                  <span className="font-bold text-sm sm:text-base">Download Contact</span>
+                </Button>
 
-              <div className="pt-3 border-t-2 border-dashed border-border">
-                <p className="text-sm font-bold text-foreground mb-4">Share via Social Media</p>
-                <div className="flex gap-3">
-                  <Button
-                    onClick={handleWhatsAppShare}
-                    size="icon"
-                    className="rounded-xl h-12 w-12 bg-green-500 hover:bg-green-600 border-2 border-green-600"
-                    data-testid="button-share-whatsapp"
-                  >
-                    <MessageCircle className="w-6 h-6" />
-                  </Button>
-                  <Button
-                    onClick={handleLinkedInShare}
-                    size="icon"
-                    className="rounded-xl h-12 w-12 bg-blue-600 hover:bg-blue-700 border-2 border-blue-700"
-                    data-testid="button-share-linkedin"
-                  >
-                    <Linkedin className="w-6 h-6" />
-                  </Button>
-                  <Button
-                    onClick={handleEmailShare}
-                    size="icon"
-                    className="rounded-xl h-12 w-12"
-                    data-testid="button-share-email"
-                  >
-                    <Mail className="w-6 h-6" />
-                  </Button>
+                <div className="pt-3 border-t-2 border-dashed border-primary/20">
+                  <p className="text-sm font-black text-foreground mb-4">Share via Social Media</p>
+                  <div className="flex gap-2 sm:gap-3">
+                    <Button
+                      onClick={handleWhatsAppShare}
+                      size="icon"
+                      className="rounded-xl h-11 w-11 sm:h-12 sm:w-12 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 border-2 border-white/20 shadow-lg"
+                      data-testid="button-share-whatsapp"
+                    >
+                      <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </Button>
+                    <Button
+                      onClick={handleLinkedInShare}
+                      size="icon"
+                      className="rounded-xl h-11 w-11 sm:h-12 sm:w-12 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 border-2 border-white/20 shadow-lg"
+                      data-testid="button-share-linkedin"
+                    >
+                      <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </Button>
+                    <Button
+                      onClick={handleEmailShare}
+                      size="icon"
+                      className="rounded-xl h-11 w-11 sm:h-12 sm:w-12 bg-gradient-to-br from-primary to-chart-2 border-2 border-white/20 shadow-lg"
+                      data-testid="button-share-email"
+                    >
+                      <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
 
-          <Card className="p-6 border-2 border-chart-2/20 shadow-xl bg-gradient-to-br from-card to-primary/5">
-            <h3 className="text-lg font-bold mb-4 text-foreground text-center">Scan QR Code</h3>
-            <div className="bg-white p-5 rounded-xl shadow-lg border-4 border-primary/20 mx-auto w-fit">
-              <QRCodeSVG value={cardUrl} size={200} data-testid="qr-code" level="H" />
-            </div>
-            <p className="text-sm text-muted-foreground mt-5 text-center font-medium">
-              📱 Scan to open this card instantly on your mobile device
-            </p>
-          </Card>
+          <div className="relative">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-chart-2 via-destructive to-chart-2 rounded-2xl blur opacity-20"></div>
+            <Card className="relative p-5 sm:p-6 border-2 border-transparent shadow-xl bg-gradient-to-br from-card to-chart-2/5">
+              <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-chart-2 via-destructive to-chart-2 -z-10"></div>
+              <h3 className="text-base sm:text-lg font-black mb-4 text-foreground text-center">Scan QR Code</h3>
+              <div className="relative mx-auto w-fit">
+                <div className="absolute -inset-2 bg-gradient-to-r from-primary to-chart-2 rounded-2xl blur-sm opacity-30"></div>
+                <div className="relative bg-white p-4 sm:p-5 rounded-xl shadow-lg border-4 border-white">
+                  <QRCodeSVG value={cardUrl} size={180} className="sm:w-[200px] sm:h-[200px]" data-testid="qr-code" level="H" />
+                </div>
+              </div>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-4 sm:mt-5 text-center font-bold">
+                📱 Scan to open this card instantly on your mobile device
+              </p>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
