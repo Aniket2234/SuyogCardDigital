@@ -60,7 +60,7 @@ const businessSupportServices = [
 ];
 
 export default function ServicesSection() {
-  const [expandedCategory, setExpandedCategory] = useState<string | null>("business-registration");
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 
   const toggleCategory = (category: string) => {
     setExpandedCategory(expandedCategory === category ? null : category);
