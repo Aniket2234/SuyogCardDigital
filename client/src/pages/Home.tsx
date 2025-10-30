@@ -15,10 +15,8 @@ export default function Home() {
       
       <div className="max-w-6xl mx-auto p-2 sm:p-4 md:p-8 md:pt-12">
         <div className="relative">
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-2xl md:rounded-3xl blur opacity-30"></div>
-          
-          <div className="relative bg-background rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border-2 border-transparent bg-clip-padding">
-            <div className="absolute inset-0 rounded-2xl md:rounded-3xl p-[2px] bg-gradient-to-r from-primary via-destructive to-chart-2 -z-10"></div>
+          <div className="relative bg-background rounded-2xl md:rounded-3xl shadow-xl overflow-hidden border-4 border-primary/10">
+            <div className="absolute inset-0 rounded-2xl md:rounded-3xl border-2 border-gradient-to-r from-primary/20 via-destructive/20 to-chart-2/20"></div>
             
             <HeroBanner />
             

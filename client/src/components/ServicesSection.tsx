@@ -70,7 +70,6 @@ export default function ServicesSection() {
     <div className="px-4 sm:px-6 py-10 sm:py-12 max-w-7xl mx-auto">
       <div className="text-center mb-8 sm:mb-10">
         <div className="relative inline-block mb-3">
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-chart-2 rounded-full blur opacity-30"></div>
           <Badge variant="outline" className="relative border-2 border-primary/50 text-primary px-5 py-1.5 font-bold bg-gradient-to-r from-primary/5 to-chart-2/5">
             What We Offer
           </Badge>
@@ -86,10 +85,7 @@ export default function ServicesSection() {
       </div>
 
       <div className="space-y-4 sm:space-y-5">
-        <div className="relative">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-chart-2 to-primary rounded-2xl blur opacity-20"></div>
-          <Card className="relative overflow-hidden border-2 border-transparent shadow-lg bg-gradient-to-br from-card to-primary/5">
-            <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-primary via-chart-2 to-primary -z-10"></div>
+        <Card className="overflow-hidden border-2 border-primary/20 shadow-md bg-gradient-to-br from-card to-primary/5">
             <button
               onClick={() => toggleCategory("business-registration")}
               className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left hover-elevate active-elevate-2 transition-all group"
@@ -123,13 +119,9 @@ export default function ServicesSection() {
               ))}
             </div>
           )}
-          </Card>
-        </div>
+        </Card>
 
-        <div className="relative">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-chart-2 via-destructive to-chart-2 rounded-2xl blur opacity-20"></div>
-          <Card className="relative overflow-hidden border-2 border-transparent shadow-lg bg-gradient-to-br from-card to-chart-2/5">
-            <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-chart-2 via-destructive to-chart-2 -z-10"></div>
+        <Card className="overflow-hidden border-2 border-chart-2/20 shadow-md bg-gradient-to-br from-card to-chart-2/5">
             <button
               onClick={() => toggleCategory("business-support")}
               className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left hover-elevate active-elevate-2 transition-all group"
@@ -163,8 +155,7 @@ export default function ServicesSection() {
               ))}
               </div>
             )}
-          </Card>
-        </div>
+        </Card>
       </div>
     </div>
   );

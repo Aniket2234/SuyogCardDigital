@@ -19,16 +19,13 @@ export default function CTASection() {
       <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-br from-chart-2/20 to-destructive/20 rounded-full blur-3xl" />
       
       <div className="relative max-w-4xl mx-auto">
-        <div className="absolute -inset-1 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-2xl blur opacity-30"></div>
-        <Card className="relative border-2 border-transparent shadow-2xl overflow-hidden bg-gradient-to-br from-card to-primary/5">
-          <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-primary via-destructive to-chart-2 -z-10"></div>
+        <Card className="relative border-2 border-primary/20 shadow-lg overflow-hidden bg-gradient-to-br from-card to-primary/5">
           <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-destructive/20 to-transparent rounded-full -mr-12 sm:-mr-16 -mt-12 sm:-mt-16" />
           <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tr from-primary/20 to-transparent rounded-full -ml-12 sm:-ml-16 -mb-12 sm:-mb-16" />
           
           <div className="relative p-6 sm:p-8 md:p-12 text-center space-y-5 sm:space-y-6">
             <div className="relative inline-block">
-              <div className="absolute -inset-2 bg-gradient-to-r from-primary to-chart-2 rounded-full blur-md opacity-40"></div>
-              <div className="relative p-3 bg-gradient-to-br from-primary to-chart-2 rounded-full mb-2 shadow-lg">
+              <div className="relative p-3 bg-gradient-to-br from-primary to-chart-2 rounded-full mb-2 shadow-md border-2 border-primary/20">
                 <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
             </div>
@@ -63,26 +60,17 @@ export default function CTASection() {
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 border-t-2 border-dashed border-border mt-6 sm:mt-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 border-t-2 border-dashed border-primary/20 mt-6 sm:mt-8">
               <div className="text-center">
-                <div className="relative inline-block">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-chart-2 rounded blur opacity-30"></div>
-                  <div className="relative text-xl sm:text-2xl font-black bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">500+</div>
-                </div>
+                <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">500+</div>
                 <div className="text-xs sm:text-sm text-muted-foreground font-bold mt-1">Happy Clients</div>
               </div>
               <div className="text-center">
-                <div className="relative inline-block">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-chart-2 to-destructive rounded blur opacity-30"></div>
-                  <div className="relative text-xl sm:text-2xl font-black bg-gradient-to-r from-chart-2 to-destructive bg-clip-text text-transparent">1000+</div>
-                </div>
+                <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-chart-2 to-destructive bg-clip-text text-transparent">1000+</div>
                 <div className="text-xs sm:text-sm text-muted-foreground font-bold mt-1">Registrations</div>
               </div>
               <div className="text-center">
-                <div className="relative inline-block">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-destructive to-primary rounded blur opacity-30"></div>
-                  <div className="relative text-xl sm:text-2xl font-black bg-gradient-to-r from-destructive to-primary bg-clip-text text-transparent">10+</div>
-                </div>
+                <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-destructive to-primary bg-clip-text text-transparent">10+</div>
                 <div className="text-xs sm:text-sm text-muted-foreground font-bold mt-1">Years Exp.</div>
               </div>
             </div>

@@ -76,7 +76,6 @@ END:VCARD`;
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8 sm:mb-10">
           <div className="relative inline-block mb-3">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-chart-2 rounded-full blur opacity-30"></div>
             <Badge variant="outline" className="relative border-2 border-primary/50 px-5 py-1.5 font-bold bg-gradient-to-r from-primary/5 to-chart-2/5">
               <Share2 className="w-3 h-3 mr-1.5 text-primary" />
               <span className="text-primary">Share & Connect</span>
@@ -93,10 +92,7 @@ END:VCARD`;
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-          <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-chart-2 to-primary rounded-2xl blur opacity-20"></div>
-            <Card className="relative p-5 sm:p-6 border-2 border-transparent shadow-xl bg-gradient-to-br from-card to-primary/5">
-              <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-primary via-chart-2 to-primary -z-10"></div>
+          <Card className="p-5 sm:p-6 border-2 border-primary/20 shadow-md bg-gradient-to-br from-card to-primary/5">
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center">
                   <Sparkles className="w-4 h-4 text-white" />
@@ -154,25 +150,19 @@ END:VCARD`;
                   </div>
                 </div>
               </div>
-            </Card>
-          </div>
+          </Card>
 
-          <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-chart-2 via-destructive to-chart-2 rounded-2xl blur opacity-20"></div>
-            <Card className="relative p-5 sm:p-6 border-2 border-transparent shadow-xl bg-gradient-to-br from-card to-chart-2/5">
-              <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-chart-2 via-destructive to-chart-2 -z-10"></div>
+          <Card className="p-5 sm:p-6 border-2 border-chart-2/20 shadow-md bg-gradient-to-br from-card to-chart-2/5">
               <h3 className="text-base sm:text-lg font-black mb-4 text-foreground text-center">Scan QR Code</h3>
               <div className="relative mx-auto w-fit">
-                <div className="absolute -inset-2 bg-gradient-to-r from-primary to-chart-2 rounded-2xl blur-sm opacity-30"></div>
-                <div className="relative bg-white p-4 sm:p-5 rounded-xl shadow-lg border-4 border-white">
+                <div className="relative bg-white p-4 sm:p-5 rounded-xl shadow-md border-2 border-primary/10">
                   <QRCodeSVG value={cardUrl} size={180} className="sm:w-[200px] sm:h-[200px]" data-testid="qr-code" level="H" />
                 </div>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground mt-4 sm:mt-5 text-center font-bold">
                 📱 Scan to open this card instantly on your mobile device
               </p>
-            </Card>
-          </div>
+          </Card>
         </div>
       </div>
     </div>

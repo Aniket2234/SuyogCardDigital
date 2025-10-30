@@ -24,8 +24,8 @@ export default function ProfileSection({
     <div className="relative px-4 sm:px-6 pb-8">
       <div className="flex flex-col items-center -mt-20 sm:-mt-24 md:-mt-28">
         <div className="relative">
-          <div className="absolute -inset-2 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-full blur-md opacity-50"></div>
-          <Avatar className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 border-[6px] border-background shadow-2xl">
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-destructive/20 to-chart-2/20 rounded-full"></div>
+          <Avatar className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 border-[6px] border-background shadow-lg ring-2 ring-primary/20">
             <AvatarImage src={profileImage || logoImage} alt={companyName} />
             <AvatarFallback className="bg-gradient-to-br from-primary to-chart-2 text-primary-foreground text-4xl font-bold">
               S
@@ -37,13 +37,10 @@ export default function ProfileSection({
         </div>
         
         <div className="relative mt-6 w-full max-w-3xl">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-chart-2 to-destructive rounded-2xl blur opacity-20"></div>
-          <Card className="relative p-5 sm:p-6 border-2 border-transparent shadow-xl bg-gradient-to-br from-card via-card to-primary/5">
-            <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-primary via-chart-2 to-destructive -z-10"></div>
+          <Card className="relative p-5 sm:p-6 border-2 border-primary/20 shadow-lg bg-gradient-to-br from-card via-card to-primary/5">
             
             <div className="text-center space-y-3">
-              <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-primary/10 via-chart-2/10 to-primary/10 border-2 border-transparent rounded-full relative">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-chart-2 to-destructive opacity-30 blur-sm"></div>
+              <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-primary/10 via-chart-2/10 to-primary/10 border-2 border-primary/30 rounded-full relative">
                 <p className="relative text-xs uppercase tracking-wider bg-gradient-to-r from-primary via-chart-2 to-primary bg-clip-text text-transparent font-black" data-testid="text-subtitle">
                   Tax & Finance Advisory Limited
                 </p>
