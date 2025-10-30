@@ -1,8 +1,42 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Target, Heart, Users, TrendingUp } from "lucide-react";
+import { useState } from "react";
 
 export default function AboutSection() {
+  const [selectedCard, setSelectedCard] = useState<number | null>(null);
+
+  const cards = [
+    {
+      id: 0,
+      icon: Target,
+      iconBg: "from-primary to-chart-2",
+      title: "Our Mission",
+      description: "Simplify business registration and management across India"
+    },
+    {
+      id: 1,
+      icon: Heart,
+      iconBg: "from-chart-2 to-destructive",
+      title: "Our Values",
+      description: "Integrity, excellence, and customer satisfaction in every service"
+    },
+    {
+      id: 2,
+      icon: Users,
+      iconBg: "from-destructive to-primary",
+      title: "500+ Clients",
+      description: "Trusted by hundreds of businesses across India"
+    },
+    {
+      id: 3,
+      icon: TrendingUp,
+      iconBg: "from-primary to-chart-2",
+      title: "10+ Years",
+      description: "A decade of experience in business advisory services"
+    }
+  ];
+
   return (
     <div id="about" className="px-4 sm:px-6 py-10 sm:py-12 bg-gradient-to-b from-background to-primary/5">
       <div className="max-w-5xl mx-auto">
@@ -27,45 +61,31 @@ export default function AboutSection() {
         </Card>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Card className="p-5 border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 hover-elevate transition-all">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center mb-4">
-              <Target className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="font-black text-foreground mb-2">Our Mission</h3>
-            <p className="text-sm text-muted-foreground">
-              Simplify business registration and management across India
-            </p>
-          </Card>
-
-          <Card className="p-5 border-2 border-chart-2/20 bg-gradient-to-br from-card to-chart-2/5 hover-elevate transition-all">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-chart-2 to-destructive flex items-center justify-center mb-4">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="font-black text-foreground mb-2">Our Values</h3>
-            <p className="text-sm text-muted-foreground">
-              Integrity, excellence, and customer satisfaction in every service
-            </p>
-          </Card>
-
-          <Card className="p-5 border-2 border-destructive/20 bg-gradient-to-br from-card to-destructive/5 hover-elevate transition-all">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-destructive to-primary flex items-center justify-center mb-4">
-              <Users className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="font-black text-foreground mb-2">500+ Clients</h3>
-            <p className="text-sm text-muted-foreground">
-              Trusted by hundreds of businesses across India
-            </p>
-          </Card>
-
-          <Card className="p-5 border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 hover-elevate transition-all">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center mb-4">
-              <TrendingUp className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="font-black text-foreground mb-2">10+ Years</h3>
-            <p className="text-sm text-muted-foreground">
-              A decade of experience in business advisory services
-            </p>
-          </Card>
+          {cards.map((card) => {
+            const Icon = card.icon;
+            const isSelected = selectedCard === card.id;
+            
+            return (
+              <Card 
+                key={card.id}
+                onClick={() => setSelectedCard(isSelected ? null : card.id)}
+                className={`p-5 cursor-pointer hover-elevate transition-all ${
+                  isSelected 
+                    ? 'border-2 border-primary bg-gradient-to-br from-card to-primary/10 scale-105 shadow-lg' 
+                    : 'border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5'
+                }`}
+                data-testid={`card-${card.title.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.iconBg} flex items-center justify-center mb-4`}>
+                  <Icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-black text-foreground mb-2">{card.title}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {card.description}
+                </p>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </div>
