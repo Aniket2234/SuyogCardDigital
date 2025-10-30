@@ -55,12 +55,12 @@ export default function AboutSection() {
     <div id="about" className="px-4 sm:px-6 py-10 sm:py-12 bg-gradient-to-b from-background to-primary/5">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-chart-2 to-primary bg-clip-text text-transparent mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-destructive to-chart-2 bg-clip-text text-transparent mb-3">
             About Us
           </h2>
           <div className="flex items-center justify-center gap-2">
             <div className="h-1 w-12 bg-gradient-to-r from-transparent via-primary to-primary rounded-full" />
-            <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-chart-2 to-primary rounded-full" />
+            <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-full" />
             <div className="h-1 w-12 bg-gradient-to-r from-chart-2 via-chart-2 to-transparent rounded-full" />
           </div>
         </div>

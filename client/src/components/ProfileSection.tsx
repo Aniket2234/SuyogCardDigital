@@ -25,7 +25,7 @@ export default function ProfileSection({
     <div className="relative px-4 sm:px-6 pb-8">
       <div className="flex flex-col items-center -mt-20 sm:-mt-24 md:-mt-28">
         <div className="relative">
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-chart-2/20 to-primary/20 rounded-full"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-destructive/20 to-chart-2/20 rounded-full"></div>
           <Avatar className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 border-[6px] border-background shadow-lg ring-2 ring-primary/20">
             <AvatarImage src={profileImage || logoImage} alt={companyName} />
             <AvatarFallback className="bg-gradient-to-br from-primary to-chart-2 text-primary-foreground text-4xl font-bold">
@@ -44,13 +44,13 @@ export default function ProfileSection({
                 </p>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-primary via-chart-2 to-primary bg-clip-text text-transparent" data-testid="text-company-name">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-primary via-destructive to-chart-2 bg-clip-text text-transparent" data-testid="text-company-name">
                 {companyName}
               </h1>
               
               <div className="flex items-center justify-center gap-2">
                 <div className="h-1 w-12 bg-gradient-to-r from-transparent via-primary to-primary rounded-full" />
-                <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-chart-2 to-primary rounded-full" />
+                <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-full" />
                 <div className="h-1 w-12 bg-gradient-to-r from-chart-2 via-chart-2 to-transparent rounded-full" />
               </div>
               

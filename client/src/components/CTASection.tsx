@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Calendar, MessageSquare, Sparkles, TrendingUp } from "lucide-react";
+import { Calendar, MessageSquare, TrendingUp } from "lucide-react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export default function CTASection() {
@@ -25,15 +25,14 @@ export default function CTASection() {
           <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tr from-primary/20 to-transparent rounded-full -ml-12 sm:-ml-16 -mb-12 sm:-mb-16" />
           
           <div className="relative p-6 sm:p-8 md:p-12 text-center space-y-5 sm:space-y-6">
-            <div className="relative inline-block">
-              <div className="relative p-3 bg-gradient-to-br from-primary to-chart-2 rounded-full mb-2 shadow-md border-2 border-primary/20">
-                <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
-              </div>
-            </div>
-            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-chart-2 to-primary bg-clip-text text-transparent" data-testid="text-cta-heading">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-destructive to-chart-2 bg-clip-text text-transparent mb-3" data-testid="text-cta-heading">
               Ready to Start Your Business Journey?
             </h2>
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="h-1 w-12 bg-gradient-to-r from-transparent via-primary to-primary rounded-full" />
+              <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-full" />
+              <div className="h-1 w-12 bg-gradient-to-r from-chart-2 via-chart-2 to-transparent rounded-full" />
+            </div>
             
             <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto font-semibold">
               Let us help you turn your business idea into reality. Get expert guidance from planning to management.
