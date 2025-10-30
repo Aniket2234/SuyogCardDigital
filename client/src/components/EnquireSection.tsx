@@ -37,13 +37,13 @@ export default function EnquireSection() {
   };
 
   return (
-    <div className="px-4 sm:px-6 py-10 sm:py-12 bg-gradient-to-r from-primary/10 via-destructive/5 to-chart-2/10 relative overflow-hidden">
+    <div className="px-4 sm:px-6 py-10 sm:py-12 bg-gradient-to-r from-primary/10 via-chart-2/5 to-primary/10 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-br from-primary/20 to-chart-2/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-br from-chart-2/20 to-destructive/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-br from-chart-2/20 to-primary/20 rounded-full blur-3xl" />
       
       <div className="relative max-w-4xl mx-auto">
         <Card className="relative border-2 border-primary/20 shadow-lg overflow-hidden bg-gradient-to-br from-card to-primary/5">
-          <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-destructive/20 to-transparent rounded-full -mr-12 sm:-mr-16 -mt-12 sm:-mt-16" />
+          <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-chart-2/20 to-transparent rounded-full -mr-12 sm:-mr-16 -mt-12 sm:-mt-16" />
           <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tr from-primary/20 to-transparent rounded-full -ml-12 sm:-ml-16 -mb-12 sm:-mb-16" />
           
           <div className="relative p-6 sm:p-8 md:p-12 text-center space-y-5 sm:space-y-6">
@@ -53,7 +53,7 @@ export default function EnquireSection() {
               </div>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-destructive to-chart-2 bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-chart-2 to-primary bg-clip-text text-transparent">
               Enquire Now
             </h2>
             

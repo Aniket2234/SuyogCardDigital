@@ -1,10 +1,24 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Target, Heart, Users, TrendingUp } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function AboutSection() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setSelectedCard(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const cards = [
     {
@@ -17,21 +31,21 @@ export default function AboutSection() {
     {
       id: 1,
       icon: Heart,
-      iconBg: "from-chart-2 to-destructive",
+      iconBg: "from-chart-2 to-primary",
       title: "Our Values",
       description: "Integrity, excellence, and customer satisfaction in every service"
     },
     {
       id: 2,
       icon: Users,
-      iconBg: "from-destructive to-primary",
+      iconBg: "from-primary to-chart-2",
       title: "500+ Clients",
       description: "Trusted by hundreds of businesses across India"
     },
     {
       id: 3,
       icon: TrendingUp,
-      iconBg: "from-primary to-chart-2",
+      iconBg: "from-chart-2 to-primary",
       title: "10+ Years",
       description: "A decade of experience in business advisory services"
     }
@@ -41,12 +55,12 @@ export default function AboutSection() {
     <div id="about" className="px-4 sm:px-6 py-10 sm:py-12 bg-gradient-to-b from-background to-primary/5">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-destructive to-chart-2 bg-clip-text text-transparent mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-chart-2 to-primary bg-clip-text text-transparent mb-3">
             About Us
           </h2>
           <div className="flex items-center justify-center gap-2">
             <div className="h-1 w-12 bg-gradient-to-r from-transparent via-primary to-primary rounded-full" />
-            <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-destructive to-chart-2 rounded-full" />
+            <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-chart-2 to-primary rounded-full" />
             <div className="h-1 w-12 bg-gradient-to-r from-chart-2 via-chart-2 to-transparent rounded-full" />
           </div>
         </div>
@@ -60,7 +74,7 @@ export default function AboutSection() {
           </p>
         </Card>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div ref={containerRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {cards.map((card) => {
             const Icon = card.icon;
             const isSelected = selectedCard === card.id;
