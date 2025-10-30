@@ -17,11 +17,6 @@ export default function ServiceCard({ icon: Icon, title, onClick, popular }: Ser
         onClick={onClick}
         data-testid={`card-service-${title.toLowerCase().replace(/\s+/g, '-')}`}
       >
-        {popular && (
-          <Badge className="absolute -right-8 top-3 rotate-45 px-8 bg-gradient-to-r from-destructive to-destructive/80 text-white text-xs font-bold shadow-lg">
-            Popular
-          </Badge>
-        )}
         <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-full -mr-12 -mt-12 group-hover:from-primary/20 transition-colors" />
         
         <div className="flex flex-col items-center text-center space-y-3 relative">

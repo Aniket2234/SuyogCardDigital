@@ -7,11 +7,6 @@ export default function AboutSection() {
     <div id="about" className="px-4 sm:px-6 py-10 sm:py-12 bg-gradient-to-b from-background to-primary/5">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8 sm:mb-10">
-          <div className="relative inline-block mb-3">
-            <Badge variant="outline" className="relative border-2 border-primary/50 text-primary px-5 py-1.5 font-bold bg-gradient-to-r from-primary/5 to-chart-2/5">
-              Who We Are
-            </Badge>
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-primary via-destructive to-chart-2 bg-clip-text text-transparent mb-3">
             About Us
           </h2>

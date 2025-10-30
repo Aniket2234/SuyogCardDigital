@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Globe } from "lucide-react";
-import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { Phone, Mail, Globe } from "lucide-react";
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
 import logoImage from '@assets/generated_images/SAHYOG_company_logo_circular_3e2c4b6e.png';
 
 interface ProfileSectionProps {
@@ -32,9 +32,6 @@ export default function ProfileSection({
               S
             </AvatarFallback>
           </Avatar>
-          <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-destructive to-destructive/80 rounded-full border-4 border-background flex items-center justify-center shadow-lg animate-pulse">
-            <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-          </div>
         </div>
         
         <div className="relative mt-6 w-full max-w-3xl">
@@ -65,7 +62,7 @@ export default function ProfileSection({
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-3 mt-6">
+            <div className="grid sm:grid-cols-3 gap-3 mt-6">
               <a
                 href={`tel:${phone}`}
                 className="relative flex items-center gap-3 bg-gradient-to-r from-primary/5 to-chart-2/5 border-2 border-primary/30 hover:border-primary px-4 py-3 rounded-xl hover-elevate active-elevate-2 transition-all group overflow-hidden"
@@ -94,28 +91,69 @@ export default function ProfileSection({
                   <p className="font-bold text-foreground text-xs sm:text-sm">{email}</p>
                 </div>
               </a>
-            </div>
-
-            <div className="flex items-center justify-center gap-4 mt-6 pt-6 border-t-2 border-dashed border-primary/20">
               <a
-                href="https://wa.me/918888004466"
+                href="https://sahyog.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#25D366] hover:bg-[#20BD5A] transition-all hover-elevate active-elevate-2 shadow-lg"
-                data-testid="link-whatsapp"
+                className="relative flex items-center gap-3 bg-gradient-to-r from-destructive/5 to-primary/5 border-2 border-destructive/30 hover:border-destructive px-4 py-3 rounded-xl hover-elevate active-elevate-2 transition-all group overflow-hidden"
+                data-testid="link-website"
               >
-                <FaWhatsapp className="w-5 h-5 text-white" />
-                <span className="text-white font-bold text-sm">WhatsApp</span>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-destructive/10 rounded-full -mr-10 -mt-10 group-hover:bg-destructive/20 transition-colors"></div>
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-destructive to-primary flex items-center justify-center shadow-md">
+                  <Globe className="w-5 h-5 text-white" />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-muted-foreground font-medium">Visit Website</p>
+                  <p className="font-bold text-foreground text-xs sm:text-sm">sahyog.in</p>
+                </div>
+              </a>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-6 pt-6 border-t-2 border-dashed border-primary/20">
+              <a
+                href="https://www.linkedin.com/company/sahyog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#0077B5] flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                data-testid="link-linkedin"
+              >
+                <FaLinkedin className="w-5 h-5 text-white" />
               </a>
               <a
                 href="https://www.instagram.com/sahyog.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:scale-105 transition-all hover-elevate active-elevate-2 shadow-lg"
+                className="w-10 h-10 rounded-full bg-[#E4405F] flex items-center justify-center hover:scale-110 transition-all shadow-lg"
                 data-testid="link-instagram"
               >
                 <FaInstagram className="w-5 h-5 text-white" />
-                <span className="text-white font-bold text-sm">Instagram</span>
+              </a>
+              <a
+                href="https://twitter.com/sahyog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                data-testid="link-twitter"
+              >
+                <FaTwitter className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href="https://www.facebook.com/sahyog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                data-testid="link-facebook"
+              >
+                <FaFacebook className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href="https://wa.me/918888004466"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center hover:scale-110 transition-all shadow-lg"
+                data-testid="link-whatsapp"
+              >
+                <FaWhatsapp className="w-5 h-5 text-white" />
               </a>
             </div>
           </Card>

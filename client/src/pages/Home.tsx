@@ -2,7 +2,7 @@ import HeroBanner from "@/components/HeroBanner";
 import ProfileSection from "@/components/ProfileSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
-import CTASection from "@/components/CTASection";
+import EnquireSection from "@/components/EnquireSection";
 import BottomNav from "@/components/BottomNav";
 
 export default function Home() {
@@ -38,8 +38,8 @@ export default function Home() {
               <ServicesSection />
             </div>
             
-            <div id="contact">
-              <CTASection />
+            <div id="enquire">
+              <EnquireSection />
             </div>
           </div>
         </div>
