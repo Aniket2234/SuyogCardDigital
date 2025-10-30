@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Globe } from "lucide-react";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import logoImage from '@assets/generated_images/SAHYOG_company_logo_circular_3e2c4b6e.png';
 
 interface ProfileSectionProps {
@@ -92,6 +93,29 @@ export default function ProfileSection({
                   <p className="text-xs text-muted-foreground font-medium">Email Us</p>
                   <p className="font-bold text-foreground text-xs sm:text-sm">{email}</p>
                 </div>
+              </a>
+            </div>
+
+            <div className="flex items-center justify-center gap-4 mt-6 pt-6 border-t-2 border-dashed border-primary/20">
+              <a
+                href="https://wa.me/918888004466"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#25D366] hover:bg-[#20BD5A] transition-all hover-elevate active-elevate-2 shadow-lg"
+                data-testid="link-whatsapp"
+              >
+                <FaWhatsapp className="w-5 h-5 text-white" />
+                <span className="text-white font-bold text-sm">WhatsApp</span>
+              </a>
+              <a
+                href="https://www.instagram.com/sahyog.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:scale-105 transition-all hover-elevate active-elevate-2 shadow-lg"
+                data-testid="link-instagram"
+              >
+                <FaInstagram className="w-5 h-5 text-white" />
+                <span className="text-white font-bold text-sm">Instagram</span>
               </a>
             </div>
           </Card>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Calendar, MessageSquare, Sparkles, TrendingUp } from "lucide-react";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export default function CTASection() {
   const handleBookConsultation = () => {
@@ -73,6 +74,30 @@ export default function CTASection() {
                 <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-destructive to-primary bg-clip-text text-transparent">10+</div>
                 <div className="text-xs sm:text-sm text-muted-foreground font-bold mt-1">Years Exp.</div>
               </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-4 mt-6 pt-6 border-t-2 border-dashed border-primary/20">
+              <p className="text-sm font-black text-muted-foreground mr-2">Connect with us:</p>
+              <a
+                href="https://wa.me/918888004466"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#25D366] hover:bg-[#20BD5A] transition-all hover-elevate active-elevate-2 shadow-lg"
+                data-testid="link-whatsapp-contact"
+              >
+                <FaWhatsapp className="w-5 h-5 text-white" />
+                <span className="text-white font-bold text-sm">WhatsApp</span>
+              </a>
+              <a
+                href="https://www.instagram.com/sahyog.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:scale-105 transition-all hover-elevate active-elevate-2 shadow-lg"
+                data-testid="link-instagram-contact"
+              >
+                <FaInstagram className="w-5 h-5 text-white" />
+                <span className="text-white font-bold text-sm">Instagram</span>
+              </a>
             </div>
           </div>
         </Card>
