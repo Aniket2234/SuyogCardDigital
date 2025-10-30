@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import EnquireSection from "@/components/EnquireSection";
 import BottomNav from "@/components/BottomNav";
+import TopHeader from "@/components/TopHeader";
 
 export default function Home() {
   const handleNavigate = (section: string) => {
@@ -15,6 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-chart-2/5 pb-20">
+      <TopHeader />
       <div className="max-w-6xl mx-auto p-2 sm:p-4 md:p-8 md:pt-12">
         <div className="relative">
           <div className="relative bg-background rounded-2xl md:rounded-3xl shadow-xl overflow-hidden border-4 border-primary/10">

@@ -45,14 +45,15 @@ This project is configured to be deployed on Netlify.
 ## Configuration
 
 The project includes a `netlify.toml` file with the following configuration:
-- **Build Command**: `npm run build` - Compiles the frontend and backend
-- **Publish Directory**: `dist` - The output directory for the built files
+- **Build Command**: `npm run build` - Compiles the frontend
+- **Publish Directory**: `dist/public` - The output directory for the static frontend files
 - **Redirects**: All routes redirect to `index.html` for client-side routing (SPA)
 - **Node Version**: 20
 
 ## Notes
 
-- This is a static site deployment. The backend is bundled with the frontend.
+- This is a static site deployment. Only the frontend is deployed to Netlify.
+- The backend (Express server) is not used in the Netlify deployment - this is a client-only build.
 - Environment variables can be set in Netlify Dashboard under Site Settings > Environment Variables
 - Custom domains can be configured in Netlify Dashboard under Domain Settings
 
@@ -60,8 +61,9 @@ The project includes a `netlify.toml` file with the following configuration:
 
 The build process does the following:
 1. Runs `vite build` to build the frontend React application
-2. Bundles the Express server using esbuild
-3. Outputs everything to the `dist` directory
+2. Bundles the Express server using esbuild (not used in Netlify deployment)
+3. Outputs the frontend static files to the `dist/public` directory
+4. Netlify serves the static files from `dist/public`
 
 ## Troubleshooting
 
