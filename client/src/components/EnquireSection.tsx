@@ -70,7 +70,7 @@ export default function EnquireSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="mt-1 border-2 border-primary/20 focus:border-primary"
+                  className="mt-1 border-2 border-primary/20 focus:border-primary rounded-full"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -84,7 +84,7 @@ export default function EnquireSection() {
                   value={formData.number}
                   onChange={handleChange}
                   required
-                  className="mt-1 border-2 border-primary/20 focus:border-primary"
+                  className="mt-1 border-2 border-primary/20 focus:border-primary rounded-full"
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -98,7 +98,7 @@ export default function EnquireSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="mt-1 border-2 border-primary/20 focus:border-primary"
+                  className="mt-1 border-2 border-primary/20 focus:border-primary rounded-full"
                   placeholder="Enter your email address"
                 />
               </div>
@@ -106,7 +106,7 @@ export default function EnquireSection() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full h-12 sm:h-14 text-base sm:text-lg font-black bg-gradient-to-r from-primary to-chart-2 border-2 border-white/20 shadow-xl hover:shadow-2xl hover:scale-105 transition-transform"
+                className="w-full h-12 sm:h-14 text-base sm:text-lg font-black bg-gradient-to-r from-primary to-chart-2 border-2 border-white/20 shadow-xl hover:shadow-2xl hover:scale-105 transition-transform rounded-full"
               >
                 <Send className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                 Submit Enquiry

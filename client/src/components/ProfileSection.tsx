@@ -74,7 +74,7 @@ export default function ProfileSection({
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-muted-foreground font-medium">Call Us</p>
-                  <p className="font-bold text-foreground text-sm sm:text-base">{phone}</p>
+                  <p className="font-bold text-foreground text-xs md:text-sm whitespace-nowrap">{phone}</p>
                 </div>
               </a>
               <a
