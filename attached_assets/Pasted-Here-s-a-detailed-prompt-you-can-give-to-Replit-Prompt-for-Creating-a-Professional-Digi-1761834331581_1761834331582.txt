@@ -1,0 +1,98 @@
+Here's a detailed prompt you can give to Replit:
+
+---
+
+**Prompt for Creating a Professional Digital Business Card Web Application**
+
+Create a modern, LinkedIn-style digital business card web application for SAHYOG Tax & Finance Advisory Limited with the following specifications:
+
+**Overall Design & Layout:**
+- Design a professional digital business card that resembles a LinkedIn profile layout
+- Include a banner section at the top with a sky blue gradient background
+- Below the banner, place a circular profile picture that overlaps the banner (similar to LinkedIn's profile photo positioning)
+- Color scheme: Sky blue as primary color, dark blue for accents, subtle red highlights for CTAs, and white for backgrounds and text contrast
+- Make it fully responsive and mobile-friendly
+- Clean, modern UI with professional corporate aesthetics
+
+**Header Section:**
+- Company logo: SAHYOG with tagline "TAX & FINANCE ADVISORY LIMITED"
+- Banner background: Sky blue gradient or professional abstract pattern
+- Circular profile picture overlapping the banner (150-200px diameter with white border)
+- Company name prominently displayed below the profile picture
+- Tagline/description: "The Simplest way to Register and manage your Business in India"
+- Contact information: Phone (+91-8888004466) and Email (info@sahyog.in) with clickable icons
+
+**Services Section - Organized in Expandable Categories:**
+
+Create a well-organized grid or card layout with two main service categories:
+
+**Category 1: Business Registration Services**
+- Private Limited Company Registration
+- OPC (One Person Company Registration)
+- Limited Liability (LLP) Registration
+- Public Limited Company Registration
+- Partnership Firm Registration
+- Proprietorship Firm Registration
+- Section 8 Company (NGO) Registration
+- Farmer Producer Company Registration
+
+**Category 2: Business Support Services**
+- PAN Registration
+- TAN Registration
+- GST Registration
+- Udyam (MSME) Registration
+- Shop Act Registration/Gumasta Registration
+- Startup India Registration
+- Import Export Code (IEC) Registration
+- Digital Signature Certificate (DSC)
+- Professional Tax (PTRC) Registration
+- Employee State Insurance (ESI) Registration
+- LEI Registration
+- Sec 8 Audit & Compliances
+- 12A Registration
+- 80G Registration
+- NITI Ayog Registration
+- CSR Registration
+
+**Service Cards Design:**
+- Each service should be displayed as a card with subtle hover effects
+- Use icons relevant to each service
+- Cards should have white background with subtle shadow
+- On hover, cards should slightly elevate and show a sky blue border
+- Consider using accordion or tabbed layout for better organization
+
+**Interactive Features:**
+- Add a "Share Card" button that generates a shareable link
+- Include social media sharing buttons (WhatsApp, LinkedIn, Email)
+- Add a "Download vCard" option to save contact directly to phone
+- Include a "Book Consultation" or "Enquire Now" CTA button in red/sky blue
+- Make all contact details (phone, email) clickable for direct action
+
+**Footer Section:**
+- Quick links: Contact Us, Blogs, Careers
+- Social media icons
+- Professional tagline: "Turn your business idea into reality with us. Begin your journey as a business owner with us – From business planning to Business Management"
+- Additional description: "A complete solution for all Individual, social & business entities to meet their various requirement such as registrations, tax filings, compliance, Loan Management, Business Start Up Services and other Business Support services across India."
+
+**Technical Requirements:**
+- Single-page application (HTML, CSS, JavaScript)
+- Smooth scrolling and animations
+- Fast loading time with optimized images
+- Generate a unique shareable URL for the digital card
+- Ensure the card looks professional when shared on social media (proper meta tags)
+- Add subtle animations on page load and interactions
+- Include a QR code that links to the digital card for easy sharing
+
+**Additional Features:**
+- Dark mode toggle option
+- Print-friendly version
+- Option to customize theme colors
+- Analytics tracking for card views (optional)
+- WhatsApp direct message integration with pre-filled text
+
+**Typography:**
+- Use professional, clean fonts (like Inter, Roboto, or Poppins)
+- Clear hierarchy with different font sizes and weights
+- Ensure readability across all devices
+
+Make it visually appealing, professional, and easy to share across all platforms. The card should instantly convey trust and professionalism while making it effortless for potential clients to understand services and get in touch.
