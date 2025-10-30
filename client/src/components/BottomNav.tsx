@@ -22,7 +22,7 @@ export default function BottomNav({ onNavigate, activeSection = "home" }: Bottom
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-primary z-50 shadow-2xl border-t-4 border-white/20 rounded-t-3xl">
+    <div className="fixed bottom-0 left-0 right-0 bg-chart-2 z-50 shadow-2xl border-t-4 border-white/20 rounded-t-3xl">
       <div className="max-w-6xl mx-auto px-2">
         <div className="grid grid-cols-4 gap-1">
           {navItems.map((item) => {
